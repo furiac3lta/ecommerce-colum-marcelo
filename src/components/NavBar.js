@@ -17,7 +17,7 @@ function NavBar() {
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
               <a className="navbar-brand" href="#">
-                Ventas
+                Inicio
               </a>
               <button
                 className="navbar-toggler"
@@ -36,17 +36,17 @@ function NavBar() {
                 <ul className="navbar-nav">
                   <li className="nav-item">
                     <a className="nav-link active" aria-current="page" href="#">
-                      Inicio
+                      Notebooks
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#">
-                      Categorias
+                      Celulares
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#">
-                      Precios
+                      Auriculares
                     </a>
                   </li>
                  

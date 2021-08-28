@@ -1,4 +1,4 @@
-
+/* 
 export const firebaseConfig = {
   apiKey: "AIzaSyAIMBfnA0CAgmaac9joAlxR1UMUHajiA1Q",
   authDomain: "ecommerce-login-7e8d7.firebaseapp.com",
@@ -9,3 +9,4 @@ export const firebaseConfig = {
   measurementId: "G-L6N75W9DRZ"
 };
 
+ */

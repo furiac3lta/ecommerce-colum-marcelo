@@ -5,10 +5,12 @@ h3 {
   text-decoration: none;
   color: none;
   font-family: 'Lato', sans-serif;
+  padding: 2em;
 }
 .rowdiv{
   background-color: #999999;
   color: white;
+  align-content: center;
 }
 .coldiv{
   text-align: right;
@@ -17,7 +19,7 @@ h3 {
   color: white;
   background-color: #999999;
   font-family: 'Lato', sans-serif;
-  padding-left: 0em;
+  padding: 3em;
 }
 i{
   color: white;
@@ -28,7 +30,7 @@ i::after{
 }
 .menu{
   position: absolute;
-  top: 43px;
+  top: 5em;
   right: 6px;
   padding: 10px 20px;
   background: grey;
@@ -54,5 +56,8 @@ ul li{
 }
 .menu li:hover{
  opacity: 1;
- color:aqua
+ color:rgb(254, 255, 255);
+ background-color: #635f5f;
+ transition: 20ms;
+ 
 }
