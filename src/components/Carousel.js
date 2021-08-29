@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.css";
-
+import imagen4 from '../imagen/4.jpg'
+import imagen5 from '../imagen/5.jpg'
+import imagen6 from '../imagen/6.jpg'
 const Carousel = () => {
   return (
     <div style={{
@@ -37,19 +39,19 @@ const Carousel = () => {
             className="carousel-item active"
          
           >
-            <img src="./imagen/4.jpg" className="d-block w-100" alt="..." />
+            <img src={imagen4} className="d-block w-100" alt="..." />
           </div>
           <div
             className="carousel-item"
            
           >
-            <img src="./imagen/5.jpg" className="d-block w-100" alt="..." />
+            <img src={imagen5} className="d-block w-100" alt="..." />
           </div>
           <div
             className="carousel-item"
             
           >
-            <img src="./imagen/6.jpg" className="d-block w-100" alt="..." />
+            <img src={imagen6} className="d-block w-100" alt="..." />
           </div>
         </div>
         <button

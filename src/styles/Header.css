@@ -1,28 +1,37 @@
+.header{
+  background-color: transparent;
+  background-image: url(../imagen/fondo3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  
+}
 h3 {
   align-content: center;
-  color: aliceblue;
   text-align: center;
   text-decoration: none;
-  color: none;
+  border: transparent;
+  color: rgb(255, 255, 255);
   font-family: 'Lato', sans-serif;
   padding: 2em;
+  font-size: xx-large;
+  
 }
 .rowdiv{
-  background-color: #999999;
   color: white;
   align-content: center;
+  border: transparent;
 }
 .coldiv{
   text-align: right;
   margin-right: 0em;
   text-decoration: none;
-  color: white;
-  background-color: #999999;
+  color: rgb(255, 255, 255);
   font-family: 'Lato', sans-serif;
-  padding: 3em;
+  padding: 4em;
+  border: transparent;
 }
 i{
-  color: white;
+  color: rgb(255, 255, 255);
   padding-right: 2em;
 }
 i::after{
@@ -30,10 +39,11 @@ i::after{
 }
 .menu{
   position: absolute;
-  top: 5em;
+  top: 6em;
   right: 6px;
+  color: white;
   padding: 10px 20px;
-  background: grey;
+  background: rgb(181, 98, 214);
   width: 150px;
   box-shadow: 0 5px 25px;
   border-radius:  5px;
@@ -52,12 +62,10 @@ ul li{
   display: flex;
   align-items: center;
   opacity: 0.8;
-
 }
 .menu li:hover{
  opacity: 1;
  color:rgb(254, 255, 255);
- background-color: #635f5f;
- transition: 20ms;
- 
+
+ transition: 20ms; 
 }
