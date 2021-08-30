@@ -1,9 +1,10 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/Header.css";
+
 function Header() {
   const toggleMenu = () => {
-    let a = document.querySelector(".menu");
-    a.classList.toggle("active");
+    let ancla = document.querySelector(".menu");
+    ancla.classList.toggle("active");
   };
 
   return (
@@ -12,11 +13,11 @@ function Header() {
         <div className="header">
           <div className="row">
             <div className="col-lg-9 col-6 rowdiv">
-              <h3 href="">Mara Shopping</h3>
+              <h3>Mara Shopping</h3>
             </div>
             <div className="col-lg-3 col-6 coldiv">
               <a href="#">
-                {" "}
+                
                 <i class="fas fa-search"></i>
               </a>
               <a href="#">

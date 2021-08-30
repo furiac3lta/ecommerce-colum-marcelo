@@ -1,9 +1,13 @@
 import "bootstrap/dist/css/bootstrap.css";
+import { NavLink } from "react-router-dom";
 import "../styles/app.css";
-import "../styles/NavBar.css"
+import "../styles/NavBar.css";
+
+
 function NavBar() {
   return (
-    <div>
+<>
+<div>
       <div className="row">
         <div className="col-lg-6">
           <div className="collapse">
@@ -16,9 +20,9 @@ function NavBar() {
           </div>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-              <a className="navbar-brand" href="#">
+              <NavLink className="navbar-brand" exact to ="/">
                 Inicio
-              </a>
+              </NavLink>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -30,36 +34,42 @@ function NavBar() {
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div className="collapse navbar-collapse" id="navbarNav" style={{
-                 fontFamily: "'Lato', sans-serif",
-              }}>
+              <div
+                className="collapse navbar-collapse"
+                id="navbarNav"
+                style={{
+                  fontFamily: "'Lato', sans-serif",
+                }}
+              >
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">
+                    <NavLink
+                      className="nav-link active"
+                      aria-current="page"
+                      exact to ="/notebooks"
+                    >
                       Notebooks
-                    </a>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">
+                    <NavLink className="nav-link" exact to ="/celulares">
                       Celulares
-                    </a>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">
+                    <NavLink className="nav-link" exact to ="/auriculares">
                       Auriculares
-                    </a>
+                    </NavLink>
                   </li>
-                 
                 </ul>
               </div>
             </div>
           </nav>
         </div>
-  
-  
       </div>
-      
-    </div>
+    </div> 
+</>
+
   );
 }
 export default NavBar;
