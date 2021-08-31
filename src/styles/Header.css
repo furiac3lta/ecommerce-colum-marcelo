@@ -51,7 +51,9 @@ i::after{
   opacity: 0;
   z-index: 1;
   visibility: hidden;
+ 
 }
+
 .menu.active{
   visibility: visible;
   opacity: 80%;
@@ -62,10 +64,16 @@ ul li{
   display: flex;
   align-items: center;
   opacity: 0.8;
+  
 }
 .menu li:hover{
  opacity: 1;
  color:rgb(254, 255, 255);
 
  transition: 20ms; 
+}
+a{
+  text-decoration: none;
+  color: white;
+
 }

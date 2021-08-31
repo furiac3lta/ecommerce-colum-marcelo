@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/Header.css";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const toggleMenu = () => {
@@ -16,26 +17,26 @@ function Header() {
               <h3>Mara Shopping</h3>
             </div>
             <div className="col-lg-3 col-6 coldiv">
-              <a href="#">
+              <NavLink exact to="/search">
                 
                 <i class="fas fa-search"></i>
-              </a>
-              <a href="#">
+              </NavLink>
+              <NavLink exact to="/carrito">
                 <i class="fas fa-shopping-cart"></i>
-              </a>
-              <a href="#">
+              </NavLink>
+              <NavLink exact to="#">
                 <i
-                  onClick={toggleMenu}
+                  onMouseOver={toggleMenu}
                   class="far fa-user"
                   style={{
                     paddingTop: "10px",
                   }}
                 ></i>
-              </a>
+              </NavLink>
               <ul className="menu">
-                <li>Login</li>
-                <li>Logout</li>
-                <li>Register</li>
+                <NavLink exact to="/login"><li className ="menuli">Login</li></NavLink>
+                <NavLink exact to="/"><li className ="menuli">Logout</li></NavLink>
+                <NavLink exact to= "/register"><li className ="menuli">Register</li></NavLink>
               </ul>
             </div>
          </div>
