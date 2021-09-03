@@ -1,29 +1,71 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "../styles/Login.css";
+import { auth } from "../Config/Config";
+import { useHistory } from "react-router-dom";
 
-export default class Login extends Component {
-  render() {
-    return (
-      <div className="container container-form">
-        <div class="login-box">
-          <form class="email-login">
-            <div class="u-form-group">
-              <input type="email" placeholder="Email" />
-            </div>
-            <div class="u-form-group">
-              <input type="password" placeholder="Password" />
-            </div>
-            <div class="u-form-group">
-              <button className="boton">Log in</button>
-            </div>
-            <div class="u-form-group">
-              <a href="#" class="forgot-password">
-                Forgot password?
-              </a>
-            </div>
-          </form>
-        </div>
-      </div>
-    );
+const Login = () => {
+  const history = useHistory();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
+
+  const handleLogin =(e)=>{
+    e.preventDefault();
+    //console.log(email, password);
+    auth.signInWithEmailAndPassword(email, password).then(()=>{
+      setSuccessMsg("Login successful")
+      setEmail("");
+            setPassword("");
+            setErrorMsg("");
+            setTimeout(() => {
+              history.push("/");
+            }, 3000);
+    }).catch(error=> setErrorMsg(error.message));
   }
-}
+  return (
+    <div className="container container-form">
+      <div className="login-box">
+        <form className="email-login" autoComplete="off" onSubmit={handleLogin}>
+          <div className="u-form-group">
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </div>
+          <div className="u-form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+          </div>
+          <div className="u-form-group">
+            <button className="boton">Log in</button>
+          </div>
+          <div className="u-form-group">
+            <a href="#" className="forgot-password">
+              Forgot password?
+            </a>
+          </div>
+        </form>
+      </div>
+      {successMsg && (
+          <>
+            <div className="container col-lg-4 bg-warning">{successMsg}</div>{" "}
+          </>
+        )}
+        {errorMsg && (
+          <>
+            <div className="container col-lg-4 bg-warning">{errorMsg}</div>{" "}
+          </>
+        )}
+    </div>
+  );
+};
+export default Login;
