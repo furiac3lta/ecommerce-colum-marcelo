@@ -1,12 +1,14 @@
+import React from "react";
+import IndividualProduct from './IndividualProduct'
 
-import React, { Component } from 'react'
 
-export default class Products extends Component {
-    render() {
-        return (
-            <div>
-                Estas en la pagina de productos
-            </div>
-        )
-    }
+const Products = ({products}) =>{
+
+    console.log(products[0].url);
+
+    return products.map((individualProduct) =>(
+        <IndividualProduct key = {individualProduct.ID} individualProduct = { individualProduct }/>
+    ) )
+
 }
+export default Products;

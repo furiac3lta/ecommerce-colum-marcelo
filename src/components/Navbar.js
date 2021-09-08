@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { NavLink } from "react-router-dom";
 import "../styles/app.css";
-import "../styles/NavBar.css";
+import "../styles/Navbar.css";
 
 
-function NavBar() {
+function Navbar() {
   return (
 <>
 <div>
@@ -72,4 +72,4 @@ function NavBar() {
 
   );
 }
-export default NavBar;
+export default Navbar;
