@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { auth, fs } from "../Config/Config";
 import Products from "./Products";
+import '../styles/Home.css'
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -24,23 +25,21 @@ const Home = () => {
 
   return (
     <>
-      {products.length > 0 && (
-        <div>
-          <h1 className="text-center">Productos</h1>
-          <div className="row">
-            <div className="col-lg-4">
-              <div className="container d-flex">
-                <div className="container ">
-                  <Products products={products} />
-                </div>
+      <h1 className="text-center pt-5">Productos</h1>
+      <div className="container">
+        <div className="cards">
+          {products.length > 0 && (
+            <div>
+              <div>
+                <Products products={products} />
               </div>
             </div>
-          </div>
+          )}
+          {products.length < 1 && (
+            <div className="container-fluid"> Please wait...</div>
+          )}
         </div>
-      )}
-      {products.length < 1 && (
-        <div className="container-fluid"> Please wait...</div>
-      )}
+      </div>
     </>
   );
 };

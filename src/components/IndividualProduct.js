@@ -3,12 +3,12 @@ import "../styles/individualProduct.css";
 const IndividualProduct = ({ individualProduct }) => {
   console.log(individualProduct);
   return (
-    <div className="row row-cols-2 g-2">
-      <div className="col">
+    <div className="row lista">
+      <div className="micard col-lg-12">
       <div className="card">
         <div className="card-body">
           <div className="card-title">{individualProduct.title}</div>
-          <div className="product-img">
+          <div className="card-img-top">
             <img src={individualProduct.url} alt="product-img"/>
           </div>
 

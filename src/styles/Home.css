@@ -1,0 +1,17 @@
+.cards{
+    float:left;margin-left:5px;
+    padding: 1rem;
+    text-decoration: solid;
+    text-decoration-color: black;
+    border-radius: 5px;
+}
+
+.lista {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 8px 8px;
+    flex-basis: 450px;
+    flex-grow: 450px;
+}
