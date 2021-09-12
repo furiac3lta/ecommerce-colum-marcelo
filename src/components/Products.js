@@ -4,7 +4,7 @@ import IndividualProduct from './IndividualProduct'
 
 const Products = ({products}) =>{
 
-    console.log(products[0].url);
+    //console.log(products[0].url);
 
     return products.map((individualProduct) =>(
         <IndividualProduct key = {individualProduct.ID} individualProduct = { individualProduct }/>

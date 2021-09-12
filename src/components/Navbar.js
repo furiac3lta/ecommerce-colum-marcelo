@@ -8,25 +8,22 @@ import "../styles/Navbar.css";
 
 function Navbar() {
   function GetCurrentUser(){
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState();
     useEffect(()=>{
       auth.onAuthStateChanged(user =>{
-        if(user){
-          fs.collection('users').doc(user.uid).get().then(snapshot =>{
+         if(user){
+            fs.collection('users').doc(user.uid).get().then(snapshot =>{
             setUser(snapshot.data().Fullname);
-           // console.log(snapshot.data().Fullname)
           })
         }
         else{
           setUser(null);
-        }
+        } 
       })
     },[])
     return user;
   }
   const user = GetCurrentUser();
-  console.log("mostrar usuario")
-  console.log(user);
 
   return (
 <>
@@ -87,7 +84,7 @@ function Navbar() {
                  
                 </ul>
                 <ul>
-                <li className="usuario">Bienvenido {user}</li>
+                <li className="usuario">Bienvenido {user} </li>
                 </ul>
               </div>
             </div>

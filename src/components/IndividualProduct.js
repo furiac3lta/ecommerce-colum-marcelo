@@ -1,7 +1,7 @@
 import "../styles/individualProduct.css";
 
 const IndividualProduct = ({ individualProduct, addToCart }) => {
-  console.log(individualProduct);
+  //console.log(individualProduct);
   const handleAddToCart =() =>{
     addToCart(individualProduct);
   }

@@ -13,7 +13,7 @@ const Header = ({user}) => {
   const history = useHistory();
   const handleLogout=()=>{
     auth.signOut().then(()=>{
-      history.push('/login')
+      history.push('/')
     })
   
   }
@@ -60,6 +60,9 @@ const Header = ({user}) => {
                     <NavLink exact to="/register">
                       <li className="menuli">Register</li>
                     </NavLink>
+                    <NavLink exact to="/">
+                    <li onClick={handleLogout} className="menuli">Logout</li>
+                  </NavLink>
                   </ul>
                 </>
               )}
