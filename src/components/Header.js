@@ -20,8 +20,12 @@ const Header = ({user}) => {
     
     const toggleMenu = () => {
     let ancla = document.querySelector(".menu");
-    ancla.classList.toggle("active");
-    
+    let miAncla = ancla.classList.toggle("active");
+    setTimeout(()=>{
+      if (miAncla){
+        ancla.classList.remove("active")
+      }
+    }, 2000)
   };
   
   return (
@@ -42,7 +46,7 @@ const Header = ({user}) => {
               </NavLink>
               <NavLink exact to="#">
                 <i
-                  onMouseOver={toggleMenu}
+                  onClick={toggleMenu}
                   
                   class="far fa-user"
                   style={{
@@ -50,6 +54,7 @@ const Header = ({user}) => {
                   }}
                 ></i>
               </NavLink>
+              
               {!user && (
                 <>
                   <ul className="menu">

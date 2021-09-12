@@ -58,6 +58,10 @@ i::after{
   visibility: visible;
   opacity: 80%;
 }
+.menu.inactive{
+  visibility:hidden;
+  opacity: 0%;
+}
 ul li{
   list-style: none;
   padding: 10px 0;
