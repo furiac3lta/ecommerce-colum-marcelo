@@ -3,7 +3,32 @@ import { auth, fs } from "../Config/Config";
 import Products from "./Products";
 import '../styles/Home.css'
 
+
+
 const Home = () => {
+  
+  function GetCurrentUser(){
+    const [user, setUser] = useState(null);
+    useEffect(()=>{
+      auth.onAuthStateChanged(user =>{
+        if(user){
+          fs.collection('users').doc(user.uid).get().then(snapshot =>{
+            setUser(snapshot.data().Fullname);
+           // console.log(snapshot.data().Fullname)
+          })
+        }
+        else{
+          setUser(null);
+        }
+      })
+    },[])
+    return user;
+  }
+  const user = GetCurrentUser();
+  console.log("mostrar usuario")
+  console.log(user);
+
+
   const [products, setProducts] = useState([]);
   const getProducts = async () => {
     const products = await fs.collection("Products").get();
@@ -23,15 +48,21 @@ const Home = () => {
     getProducts();
   }, []);
 
+  const addToCart =(product) =>{
+    // console.log(product);
+
+  }
+
   return (
     <>
+    
       <h1 className="text-center pt-5">Productos</h1>
       <div className="container">
         <div className="cards">
           {products.length > 0 && (
             <div>
               <div>
-                <Products products={products} />
+                <Products products={products} addToCart = { addToCart }/>
               </div>
             </div>
           )}

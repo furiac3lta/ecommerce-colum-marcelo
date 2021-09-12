@@ -1,15 +1,38 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { auth, fs } from "../Config/Config";
 import "../styles/app.css";
 import "../styles/Navbar.css";
 
 
 function Navbar() {
+  function GetCurrentUser(){
+    const [user, setUser] = useState(null);
+    useEffect(()=>{
+      auth.onAuthStateChanged(user =>{
+        if(user){
+          fs.collection('users').doc(user.uid).get().then(snapshot =>{
+            setUser(snapshot.data().Fullname);
+           // console.log(snapshot.data().Fullname)
+          })
+        }
+        else{
+          setUser(null);
+        }
+      })
+    },[])
+    return user;
+  }
+  const user = GetCurrentUser();
+  console.log("mostrar usuario")
+  console.log(user);
+
   return (
 <>
 <div>
       <div className="row">
-        <div className="col-lg-6">
+        <div className="col-lg-12">
           <div className="collapse">
             <div className="bg  bg-dark p-4">
               <h5 className="text-white h4">Collapsed content</h5>
@@ -61,6 +84,10 @@ function Navbar() {
                       Auriculares
                     </NavLink>
                   </li>
+                 
+                </ul>
+                <ul>
+                <li className="usuario">Bienvenido {user}</li>
                 </ul>
               </div>
             </div>

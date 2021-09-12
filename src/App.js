@@ -14,6 +14,7 @@ import Register from "./components/Register";
 import Carrito from "./components/Carrito";
 import AddProducts from "./components/AddProducts";
 import Products from "./components/Products";
+import Inicio from "./components/Inicio";
 
 function App() {
   return (
@@ -22,11 +23,11 @@ function App() {
         <Header />
         <div className="container">
           <Navbar />
-          <Carousel />
+          
         </div>
 
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Inicio} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/auriculares" component={Auriculares} />
           <Route exact path="/celulares" component={Celulares} />

@@ -1,7 +1,10 @@
 import "../styles/individualProduct.css";
 
-const IndividualProduct = ({ individualProduct }) => {
+const IndividualProduct = ({ individualProduct, addToCart }) => {
   console.log(individualProduct);
+  const handleAddToCart =() =>{
+    addToCart(individualProduct);
+  }
   return (
     <div className="row lista">
       <div className="micard col-lg-12">

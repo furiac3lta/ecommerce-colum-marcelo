@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/Header.css";
 import { NavLink, useHistory } from "react-router-dom";
-import logo from "../imagen/logo.png";
+import Home from "./Home";
 import {Icon} from 'react-icons-kit';
 import {shoppingCart} from 'react-icons-kit/feather/shoppingCart';
 import {auth} from '../Config/Config';
@@ -21,8 +21,9 @@ const Header = ({user}) => {
     const toggleMenu = () => {
     let ancla = document.querySelector(".menu");
     ancla.classList.toggle("active");
+    
   };
-
+  
   return (
     <div>
       <div>
@@ -30,7 +31,7 @@ const Header = ({user}) => {
           <div className="row">
             <div className="col-lg-9 col-6 rowdiv">
              
-              <h3>Mara Shopping</h3>
+              <h3>Mara Shopping {user}</h3>
             </div>
             <div className="col-lg-3 col-6 coldiv">
               <NavLink exact to="/search">
@@ -42,6 +43,7 @@ const Header = ({user}) => {
               <NavLink exact to="#">
                 <i
                   onMouseOver={toggleMenu}
+                  
                   class="far fa-user"
                   style={{
                     paddingTop: "10px",
