@@ -1,8 +1,10 @@
+.colors{
+  background-color: rgb(215, 233, 247) !important;
+}
 .header{
-  background-color: transparent;
-  background-image: url(../imagen/fondo3.jpg);
   background-repeat: no-repeat;
   background-size: cover; 
+  color: black;
   
 }
 h3 {
@@ -10,14 +12,14 @@ h3 {
   text-align: center;
   text-decoration: none;
   border: transparent;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: 'Lato', sans-serif;
   padding: 2em;
   font-size: xx-large;
   
 }
 .rowdiv{
-  color: white;
+  color: rgb(0, 0, 0);
   align-content: center;
   border: transparent;
 }
@@ -25,13 +27,13 @@ h3 {
   text-align: right;
   margin-right: 0em;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: 'Lato', sans-serif;
   padding: 4em;
   border: transparent;
 }
 i{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   padding-right: 2em;
 }
 i::after{
@@ -40,15 +42,15 @@ i::after{
 .menu{
   position: absolute;
   top: 6em;
-  right: 6px;
-  color: white;
+  right: 30em;
+  color: rgb(0, 0, 0);
   padding: 10px 20px;
-  background: rgb(181, 98, 214);
+  background: rgb(207, 237, 238);
   width: 150px;
   box-shadow: 0 5px 25px;
   border-radius:  5px;
   transition: 0.5s;
-  opacity: 0;
+  opacity: 0.8;
   z-index: 1;
   visibility: hidden;
  
@@ -56,7 +58,7 @@ i::after{
 
 .menu.active{
   visibility: visible;
-  opacity: 80%;
+  opacity: 60%;
 }
 .menu.inactive{
   visibility:hidden;
@@ -72,12 +74,230 @@ ul li{
 }
 .menu li:hover{
  opacity: 1;
- color:rgb(254, 255, 255);
+ color:rgb(7, 7, 7);
 
  transition: 20ms; 
 }
 a{
   text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
 
 }
+
+/* -----------------------------VERSION MOBILE----------------------------- */
+/*----------- iPhone 6, 6S, 7 and 8 -----------*/
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .carousel-item {
+    height: 15rem;
+  }
+
+  .textos {
+    padding: 0 1em 0 1em;
+  }
+  h3 {
+    align-content: center;
+    text-align: center;
+    text-decoration: none;
+    border: transparent;
+    color: rgb(0, 0, 0);
+    font-family: 'Lato', sans-serif;
+    
+    font-size: xx-large;
+    }
+    i{
+      color: rgb(0, 0, 0);
+      
+    }
+    i::after{
+      transform: scale(.5);
+    }
+    .coldiv{
+      text-align: center;
+      margin: auto;
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      font-family: 'Lato', sans-serif;
+      padding: 0em;
+      border: transparent;
+    }
+    .menu{
+      position: absolute;
+      top: 13em;
+      right: 1em;
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      background: rgb(207, 237, 238);
+      width: 150px;
+      box-shadow: 0 5px 25px;
+      border-radius:  5px;
+      transition: 0.5s;
+      opacity: 0.8;
+      z-index: 1;
+      visibility: hidden;
+     
+    }
+}
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .carousel-item {
+    height: 20rem;
+  }
+
+  .textos {
+    padding: 0 1em 0 1em;
+  }
+  h3 {
+    align-content: center;
+    text-align: center;
+    text-decoration: none;
+    border: transparent;
+    color: rgb(0, 0, 0);
+    font-family: 'Lato', sans-serif;
+    padding: 1em;
+    font-size: xx-large;
+    }
+    .menu{
+      position: absolute;
+      top: 6em;
+      right: 1em;
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      background: rgb(207, 237, 238);
+      width: 150px;
+      box-shadow: 0 5px 25px;
+      border-radius:  5px;
+      transition: 0.5s;
+      opacity: 0.8;
+      z-index: 1;
+      visibility: hidden;
+     
+    }
+   
+}
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .carousel-item {
+    height: 20rem;
+  }
+
+  .textos {
+    padding: 0 1em 0 1em;
+  }
+  .coldiv{
+    text-align: center;
+    margin: auto;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Lato', sans-serif;
+    padding: 0em;
+    border: transparent;
+  }
+  .menu{
+    position: absolute;
+    top: 13em;
+    right: 1em;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    background: rgb(207, 237, 238);
+    width: 150px;
+    box-shadow: 0 5px 25px;
+    border-radius:  5px;
+    transition: 0.5s;
+    opacity: 0.8;
+    z-index: 1;
+    visibility: hidden;
+   
+  }
+  
+}
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  .carousel-item {
+    height: 23rem;
+  }
+
+  .textos {
+    padding: 0 1em 0 1em;
+  }
+  .menu{
+    position: absolute;
+    top: 6em;
+    right: 2em;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    background: rgb(207, 237, 238);
+    width: 150px;
+    box-shadow: 0 5px 25px;
+    border-radius:  5px;
+    transition: 0.5s;
+    opacity: 0.8;
+    z-index: 1;
+    visibility: hidden;
+   
+  }
+}
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .carousel-item {
+    height: 30rem;
+  }
+
+  .textos {
+    padding: 0 1em 0 1em;
+  }
+  .coldiv{
+    text-align: center;
+    margin: auto;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Lato', sans-serif;
+    padding: 0em;
+    border: transparent;
+  }
+  .menu{
+    position: absolute;
+    top: 6em;
+    right: 1em;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    background: rgb(207, 237, 238);
+    width: 150px;
+    box-shadow: 0 5px 25px;
+    border-radius:  5px;
+    transition: 0.5s;
+    opacity: 0.8;
+    z-index: 1;
+    visibility: hidden;
+   
+  }
+}
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .carousel-item {
+    height: 30rem;
+  }
+
+  .textos {
+    padding: 0 1em 0 1em;
+  }
+  .menu{
+    position: absolute;
+    top: 6em;
+    right: 2em;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    background: rgb(207, 237, 238);
+    width: 150px;
+    box-shadow: 0 5px 25px;
+    border-radius:  5px;
+    transition: 0.5s;
+    opacity: 0.8;
+    z-index: 1;
+    visibility: hidden;
+   
+  }
+}
+/* ----------------------------- FIN VERSION MOBILE----------------------------- */

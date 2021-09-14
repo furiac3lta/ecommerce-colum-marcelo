@@ -27,8 +27,8 @@ function Navbar() {
 
   return (
 <>
-<div>
-      <div className="row">
+<div className="container">
+      <div className="row minav">
         <div className="col-lg-12">
           <div className="collapse">
             <div className="bg  bg-dark p-4">

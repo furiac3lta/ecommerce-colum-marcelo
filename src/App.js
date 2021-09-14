@@ -1,7 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
 import React from "react";
-import Carousel from "./components/Carousel";
-import Navbar from "./components/Navbar";
 import "./styles/app.css";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -20,11 +18,11 @@ function App() {
   return (
     <>
       <Router>
+        
         <Header />
-        <div className="container">
-          <Navbar />
+      
           
-        </div>
+        
 
         <Switch>
           <Route exact path="/" component={Inicio} />
