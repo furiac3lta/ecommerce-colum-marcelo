@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { fs } from "../Config/Config";
-import { useParams } from "react-router-dom";
-
 
 const Detalle = () => {
   
