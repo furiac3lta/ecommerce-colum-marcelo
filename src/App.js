@@ -13,6 +13,7 @@ import Carrito from "./components/Carrito";
 import AddProducts from "./components/AddProducts";
 import Products from "./components/Products";
 import Inicio from "./components/Inicio";
+import Detalle from "./components/Detalle";
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/carrito" component={Carrito} />
           <Route exact path="/add-products" component={AddProducts} />
-          
+          <Route exact path="/detalle/:id" component={Detalle} />
         </Switch>
       </Router>
     </>

@@ -46,8 +46,9 @@ const Home = () => {
     getProducts();
   }, []);
 
+ 
   const addToCart =(product) =>{
-    // console.log(product);
+     console.log(product);
 
   }
 
@@ -61,6 +62,7 @@ const Home = () => {
             <div>
               <div>
                 <Products products={products} addToCart = { addToCart }/>
+                {console.log(products)}
               </div>
             </div>
           )}
