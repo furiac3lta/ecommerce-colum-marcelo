@@ -21,22 +21,22 @@ function App() {
       <Router>
         
         <Header />
-      
+     
           
         
 
         <Switch>
           <Route exact path="/" component={Inicio} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/auriculares" component={Auriculares} />
-          <Route exact path="/celulares" component={Celulares} />
-          <Route exact path="/notebooks" component={Notebooks} />
+          <Route exact path="/auriculares/" component={Auriculares} />
+          <Route exact path="/celulares/" component={Celulares} />
+          <Route exact path="/notebooks/" component={Notebooks} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/carrito" component={Carrito} />
           <Route exact path="/add-products" component={AddProducts} />
-          <Route exact path="/detalle" component={Detalle} />
+          <Route path="/detalle/:id" component={Detalle} />
         </Switch>
       </Router>
     </>
