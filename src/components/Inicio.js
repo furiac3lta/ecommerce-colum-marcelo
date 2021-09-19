@@ -3,6 +3,7 @@ import "./../styles/inicio.css";
 import imagen4 from "../imagen/4.png";
 import imagen5 from "../imagen/5.png";
 import imagen6 from "../imagen/6.png";
+
 const Inicio = () => {
   return (
     <>
@@ -101,7 +102,9 @@ const Inicio = () => {
         </div>
       </div>
     </>
+    
   );
+ 
 };
 
 export default Inicio;

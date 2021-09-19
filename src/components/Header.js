@@ -42,36 +42,29 @@ const Header = ({ user }) => {
                   <i class="fas fa-shopping-cart"></i>
                 </NavLink>
                 <NavLink exact to="#">
-                 
-                    <i
-                      onClick={toggleMenu}
-                      className="far fa-user"
-                      style={{
-                        paddingTop: "10px",
-                      }}
-                    ></i>
-                    <ul className="menu">
-                      <NavLink exact to="/login">
-                        <li>Login</li>
-                      </NavLink>
-
-                      <NavLink exact to="/register">
-                        <li>Register</li>
-                      </NavLink>
-                      <NavLink exact to="/">
-                        <li onClick={handleLogout}>Logout</li>
-                      </NavLink>
-                    </ul>
-                 
+                  <i
+                    onClick={toggleMenu}
+                    className="far fa-user"
+                    style={{
+                      paddingTop: "10px",
+                    }}
+                  ></i>
+                  <ul className="menu">
+                    <NavLink exact to="/login">
+                      <li>Login</li>
+                    </NavLink>
+                    <NavLink exact to="/register">
+                      <li>Register</li>
+                    </NavLink>
+                    <NavLink exact to="/home">
+                      <li onClick={handleLogout}>Logout</li>
+                    </NavLink>
+                  </ul>
                 </NavLink>
-
-                
               </div>
             </div>
           </div>
         </div>
-        <hr></hr>
-        <Navbar />
       </div>
     </div>
   );

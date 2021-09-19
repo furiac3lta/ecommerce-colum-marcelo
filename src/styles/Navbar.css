@@ -1,51 +1,57 @@
-  .navbar {
-    background-color: transparent !important;
-    margin-left: 10px;
-  }
-  .navbar-nav {
-    width: 100%;
-    text-align: center;
-    
-
-  }
-
-  .navbar-nav > li {
-      float: none;
-      display: inline-block;
-    }
-    .usuario{
-      margin-left: 30px;
-    }
-    /* -----------------------------VERSION MOBILE----------------------------- */
+.minav {
+  background-color: transparent !important;
+  margin-left: 10px;
+}
+.navbar-nav {
+  width: 100%;
+  text-align: center;
+}
+.navbar {
+  background-color: rgb(215, 233, 247) !important;
+}
+.navbar-nav > li {
+  float: none;
+  display: inline-block;
+}
+.usuario {
+  margin-left: 30px;
+}
+.container {
+  background-color: rgb(215, 233, 247) !important;
+}
+.text-nav {
+  background-color: rgb(215, 233, 247) !important;
+  
+}
+#miH5{
+  margin-bottom: 0rem !important;
+  
+}
+/* -----------------------------VERSION MOBILE----------------------------- */
 /*----------- iPhone 6, 6S, 7 and 8 -----------*/
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  
 }
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-
-   
 }
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 /* Portrait */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
- 
 }
 /* Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
- 
 }
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 /* Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-  .usuario{
+  .usuario {
     margin-left: 13em !important;
   }
 }
 /* Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
-  .usuario{
+  .usuario {
     margin-left: 13em;
   }
 }

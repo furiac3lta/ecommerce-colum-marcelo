@@ -24,11 +24,13 @@ const Login = () => {
     }).catch(error=> setErrorMsg(error.message));
   }
   return (
-    <div className="container container-form">
+   <div className="colors">
+      <div className="container container-form">
       <div className="login-box">
         <form className="email-login" autoComplete="off" onSubmit={handleLogin}>
           <div className="u-form-group">
             <input
+              
               type="email"
               placeholder="Email"
               required
@@ -38,6 +40,7 @@ const Login = () => {
           </div>
           <div className="u-form-group">
             <input
+           
               type="password"
               placeholder="Password"
               required
@@ -66,6 +69,7 @@ const Login = () => {
           </>
         )}
     </div>
-  );
+  
+   </div>);
 };
 export default Login;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fs } from "../Config/Config";
+import "./../styles/ListaProductos.css"
 
 const Detalle = () => {
   let { id } = useParams();
@@ -24,19 +25,23 @@ const Detalle = () => {
             <div className="card-body">
               <div className="card-title">{verProducto.title}</div>
               <div className="card-img-top">
-                <img src={verProducto.url} alt="product-img" />
+                <img id="img-lista-prod"  src={verProducto.url} alt="product-img" />
               </div>
 
               <h5 className="card-text">{verProducto.description}</h5>
               <div className="card-text">{verProducto.price}</div>
               <div className=" btn btn-danger btn-md cart-btn">
-                Agregar a Carro
+                Agregar Carro
+              </div>
+              <div className=" btn btn-danger btn-md cart-btn">
+                Comprar
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  
   );
 };
 

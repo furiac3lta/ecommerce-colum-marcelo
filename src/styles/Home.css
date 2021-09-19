@@ -6,7 +6,7 @@
     border-radius: 5px;
 }
 
-.lista {
+.lista-home {
     float: left;
     display: flex;
     flex-wrap: wrap;
@@ -18,4 +18,11 @@
 .tituloUsuario{
     float:right;
     padding-bottom: 20px;
+}
+.mirow > div[class*='col-'] {
+    display: flex;
+    flex:1 0 auto;
+  }
+#container-home{
+    background-color:transparent !important;
 }

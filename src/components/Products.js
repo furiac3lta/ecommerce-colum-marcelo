@@ -7,8 +7,10 @@ const Products = ({products}) =>{
     //console.log(products.url);
 
     return products.map((individualProduct) =>(
-        <IndividualProduct key = {individualProduct.ID} individualProduct = { individualProduct }/>
-        
+       
+            <IndividualProduct key = {individualProduct.ID} individualProduct = { individualProduct }/>
+       
+               
     ) )
     
 }

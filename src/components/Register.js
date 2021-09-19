@@ -44,7 +44,8 @@ const Register = () => {
       });
   };
   return (
-    <div className="container container-form">
+    <div className="colors">
+      <div className="container container-form">
       <div class="login-box">
         <form class="email-signup" onSubmit={handleSignup}>
           <div class="u-form-group">
@@ -92,7 +93,9 @@ const Register = () => {
           </>
         )}
     </div>
-  );
+  
+    </div>
+    );
 };
 
 export default Register;

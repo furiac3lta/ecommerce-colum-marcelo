@@ -1,31 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { auth, fs } from "../Config/Config";
 import Products from "./Products";
-import '../styles/Home.css'
-
-
+import "../styles/Home.css";
 
 const Home = () => {
   //fs =  firebase.firestore()
-  function GetCurrentUser(){
+  function GetCurrentUser() {
     const [user, setUser] = useState();
-    useEffect(()=>{
-      auth.onAuthStateChanged(user =>{
-         if(user){
-            fs.collection('users').doc(user.uid).get().then(snapshot =>{
-            setUser(snapshot.data().Fullname);
-          })
-        }
-        else{
+    useEffect(() => {
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          fs.collection("users")
+            .doc(user.uid)
+            .get()
+            .then((snapshot) => {
+              setUser(snapshot.data().Fullname);
+            });
+        } else {
           setUser(null);
-        } 
-      })
-    },[])
+        }
+      });
+    }, []);
     return user;
   }
   const user = GetCurrentUser();
   //console.log(user)
-
 
   const [products, setProducts] = useState([]);
   const getProducts = async () => {
@@ -46,31 +45,28 @@ const Home = () => {
     getProducts();
   }, []);
 
- 
-  const addToCart =(product) =>{
-     console.log(product);
-
-  }
+  const addToCart = (product) => {
+    // console.log(product);
+  };
 
   return (
     <>
-    
-      <h1 className="text-center pt-5">Productos</h1>
-      <div className="container">
-        <div className="cards">
-          {products.length > 0 && (
-            <div>
-              <div>
-                <Products products={products} addToCart = { addToCart }/>
-                {console.log(products)}
+      {products.length > 0 && (
+        <div id="container-home" className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h1 className="text-center pt-5">Productos</h1>
+              <div className="lista-home">
+                <Products products={products} addToCart={addToCart} />
+                {console.log(products.ID)}
               </div>
             </div>
-          )}
-          {products.length < 1 && (
-            <div className="container-fluid"> Please wait...</div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
+      {products.length < 1 && (
+        <div className="container-fluid"> Please wait...</div>
+      )}
     </>
   );
 };

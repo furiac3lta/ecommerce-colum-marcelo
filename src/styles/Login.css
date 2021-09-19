@@ -1,69 +1,24 @@
+.input-login{
+  background-color: #ffffff !important;
+}
 .container-form{
   padding-top: 2em;
 }
 .boton{
-  color: #ccd1d3 !important;
-  background-color: #666 !important;
+  color: #ffffff !important;
+  background-color: rgb(3, 3, 3) !important;
 }
   .login-box{
     position:relative;
     margin: 10px auto;
     width: 500px;
     height: 300px;
-    background-color: rgb(216, 215, 216);
+    background-color: transparent;
     opacity: 70%;
     padding: 10px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
-  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
-  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+   
   }
-  .lb-header{
-    position:relative;
-    color: #00415d;
-    margin: 5px 5px 10px 5px;
-    padding-bottom:10px;
-    border-bottom: 1px solid #eee;
-    text-align:center;
-    height:28px;
-  }
-  .lb-header a{
-    margin: 0 25px;
-    padding: 0 20px;
-    text-decoration: none;
-    color: #666;
-    font-weight: bold;
-    font-size: 15px;
-    -webkit-transition: all 0.1s linear;
-    -moz-transition: all 0.1s linear;
-    transition: all 0.1s linear;
-  }
-  .lb-header .active{
-    color: #029f5b;
-    font-size: 18px;
-  }
-  .social-login{
-    position:relative;
-    float: left;
-    width: 100%;
-    height:auto;
-    padding: 10px 0 15px 0;
-    border-bottom: 1px solid #eee;
-  }
-  .social-login a{
-    position:relative;
-    float: left;
-    width:calc(40% - 8px);
-    text-decoration: none;
-    color: #fff;
-    border: 1px solid rgba(0,0,0,0.05);
-    padding: 12px;
-    border-radius: 2px;
-    font-size: 12px;
-    text-transform: uppercase;
-    margin: 0 3%;
-    text-align:center;
-  }
+  
   .social-login a i{
     position: relative;
     float: left;
@@ -71,7 +26,7 @@
     top: 2px;
   }
   .social-login a:first-child{
-    background-color: #49639F;
+    background-color: #000000;
   }
   .social-login a:last-child{
     background-color: #DF4A32;
@@ -104,7 +59,7 @@
     transition:all 0.1s linear;
   }
   .u-form-group input:focus{
-    border-color: #358efb;
+    border-color: #030303;
   }
   .u-form-group button{
     width:50%;
@@ -122,6 +77,6 @@
     width:50%;
     text-align: left;
     text-decoration: underline;
-    color: #888;
+    color: rgb(216, 37, 37);
     font-size: 0.75rem;
   }

@@ -78,7 +78,7 @@ const AddProducts = () => {
   console.log(category)
 
   return (
-    <div className="container">
+    <div className="container ">
       <h1>Agregar Productos</h1>
       {successMsg && (
         <>
@@ -87,7 +87,9 @@ const AddProducts = () => {
         </>
       )}
 
-      <form
+     <div className="mt-5 row justify-content-center">
+       <div className="col-12 col-sm-8 col-md-6 col-xl-6">
+       <form
         autoComplete="off"
         className="form-group"
         onSubmit={handleAddProducts}
@@ -95,7 +97,7 @@ const AddProducts = () => {
         <div className="form-row">
           <label>Categoria del Producto</label>
           <select
-            className="form-select"
+            className="form-select mt-3"
             onChange={(e) => setCategory(e.target.value)}
             value={category}
           >
@@ -107,7 +109,7 @@ const AddProducts = () => {
           <label>Nombre del Producto</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control mt-3"
             required
             onChange={(e) => setTitle(e.target.value)}
             value={title}
@@ -116,7 +118,7 @@ const AddProducts = () => {
           <label>Descripcion</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control mt-3"
             required
             onChange={(e) => setDescription(e.target.value)}
             value={description}
@@ -125,7 +127,7 @@ const AddProducts = () => {
           <label>Precio</label>
           <input
             type="number"
-            className="form-control"
+            className="form-control mt-3"
             required
             onChange={(e) => setPrice(e.target.value)}
             value={price}
@@ -133,7 +135,7 @@ const AddProducts = () => {
           <label>Detalle</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control mt-3"
             required
             onChange={(e) => setDetalle(e.target.value)}
             value={detalle}
@@ -141,7 +143,7 @@ const AddProducts = () => {
           <label>Stock</label>
           <input
             type="number"
-            className="form-control"
+            className="form-control mt-3"
             required
             onChange={(e) => setStock(e.target.value)}
             value={stock}
@@ -151,7 +153,7 @@ const AddProducts = () => {
           <input
             type="file"
             id="file"
-            className="form-control"
+            className="form-control mt-3"
             required
             onChange={handleProductImg}
           ></input>
@@ -170,6 +172,8 @@ const AddProducts = () => {
           </div>
         </div>
       </form>
+       </div>
+     </div>
 
       {uploadError && (
         <>
