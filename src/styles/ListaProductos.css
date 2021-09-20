@@ -12,7 +12,9 @@
     object-fit: cover;
   }
   
-
+  #detalle-card-text{
+    margin-top: 2.5rem !important;
+}
 
 .card:hover {
   background: #fff;
@@ -63,6 +65,7 @@ img-lista-prod:hover {
 }
 .btn-danger{
 margin-top: 1em !important;
+margin-left: 5px;
 display:inline-block;
 border-color: grey;
 color:#FFFFFF;

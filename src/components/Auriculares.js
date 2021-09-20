@@ -6,20 +6,10 @@ import "./../styles/ListaProductos.css";
 
 const Notebooks = () => {
   let { id } = useParams();
-  const [verNotebooks, setVerNotebooks] = useState([]);
-  const [verProductos, setVerProductos] = useState([]);
-
+  const [verAuriculares, setVerAuriculares] = useState([]);
+  
   useEffect(() => {
-    fs.collection("Products")
-      .doc(id)
-      .get()
-      .then((docu) => setVerNotebooks({ id: docu.id, ...docu.data() }))
-
-      .catch((error) => {
-        console.log("Error getting documents: ", error);
-      });
-
-    fs.collection("Products")
+   fs.collection("Products")
       .where("category", "==", "auriculares")
       .get()
       .then((querySnapshot) => {
@@ -27,7 +17,7 @@ const Notebooks = () => {
           // doc.data() is never undefined for query doc snapshots
           console.log(doc.id, " => ", doc.data());
           console.log(doc.id);
-          setVerProductos(
+          setVerAuriculares(
             querySnapshot.docs.map((documento) => {
               return { ...documento.data(), id: documento.id };
             })
@@ -40,22 +30,22 @@ const Notebooks = () => {
   }, []);
 
   return (
-    verProductos.length > 0 && (
+    verAuriculares.length > 0 && (
       <div className="container" id="container-home">
         <div className="row">
           <div className="col-lg-12">
-            {verProductos.map((verProducto) => (
+            {verAuriculares.map((verAuricular) => (
               <div className="lista-prod">
                 <div className="card">
                   <div className="card-body">
-                    <div className="card-title">{verProducto.title}</div>
+                    <div className="card-title">{verAuricular.title}</div>
                     <div className="card-img-top">
-                      <img  id="img-lista-prod" src={verProducto.url} alt="product-img" />
+                      <img  id="img-lista-prod" src={verAuricular.url} alt="product-img" />
                     </div>
 
-                    <h5 className="card-text">{verProducto.description}</h5>
-                    <div className="card-text">{verProducto.price}</div>
-                    <Link to={`/detalle/${verNotebooks.ID}`}>
+                    <h5 id="detalle-card-text" className="card-text">{verAuricular.description}</h5>
+                    <div className="card-text">{verAuricular.price}</div>
+                    <Link to={`/detalle/${verAuricular.id}`}>
                       <div
                         className="mibutton btn btn-danger btn-md cart-btn"
                         style={{

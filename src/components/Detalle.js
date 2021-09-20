@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fs } from "../Config/Config";
-import "./../styles/ListaProductos.css"
+import "./../styles/Detalle.css";
+import { NavLink } from "react-router-dom";
 
 const Detalle = () => {
   let { id } = useParams();
@@ -17,31 +18,45 @@ const Detalle = () => {
   }, []);
 
   return (
-    <div>
+    <div id="container-detalle" className="container">
       {console.log(verProducto)}
-      <div className="row lista">
-        <div className="micard col-lg-12">
-          <div className="card">
-            <div className="card-body">
-              <div className="card-title">{verProducto.title}</div>
-              <div className="card-img-top">
-                <img id="img-lista-prod"  src={verProducto.url} alt="product-img" />
-              </div>
-
-              <h5 className="card-text">{verProducto.description}</h5>
-              <div className="card-text">{verProducto.price}</div>
-              <div className=" btn btn-danger btn-md cart-btn">
-                Agregar Carro
-              </div>
-              <div className=" btn btn-danger btn-md cart-btn">
-                Comprar
-              </div>
+      <section className="product">
+        <div className="product__photo">
+          <div className="">
+            <div className="">
+              <div className="controls"></div>
+              <img
+                id="img-detalle"
+                src={verProducto.url}
+                alt="green apple slice"
+              />
             </div>
           </div>
         </div>
-      </div>
+        <div className="product__info">
+          <div className="title">
+            <h1>{verProducto.title}</h1>
+            <span>{verProducto.price}</span>
+          </div>
+          <div className="price">
+            $ <span>{verProducto.price}</span>
+          </div>
+
+          <div className="description">
+            <h3>DETALLE</h3>
+            <ul>
+              <li>{verProducto.detalle}</li>
+            </ul>
+          </div>
+          <NavLink exact to ="/home/carrito">
+          <button className="buy--btn">AGREGAR A CARRO</button>
+          </NavLink>
+          <NavLink exact to="/home">
+         <i class="volver fas fa-undo"></i>
+          </NavLink>
+        </div>
+      </section>
     </div>
-  
   );
 };
 

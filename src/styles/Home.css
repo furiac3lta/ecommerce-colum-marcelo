@@ -26,3 +26,6 @@
 #container-home{
     background-color:transparent !important;
 }
+.card-title{
+    margin-top: 2.5rem !important;
+}

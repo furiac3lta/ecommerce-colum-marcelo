@@ -32,7 +32,7 @@ const Header = ({ user }) => {
           <div className="header">
             <div className="row">
               <div className="col-lg-6 col-md-6 col-xs-4 col-sm-5 rowdiv">
-                <h3>Mara Shopping {user}</h3>
+                <h3 id="mih3">Mara Shopping {user}</h3>
               </div>
               <div className="col-lg-6 col-md-6 col-xs-8 col-sm-7 coldiv">
                 <NavLink exact to="/search">

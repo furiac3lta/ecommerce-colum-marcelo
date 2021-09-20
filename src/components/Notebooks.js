@@ -10,24 +10,24 @@ const Notebooks = () => {
   const [verProductos, setVerProductos] = useState([]);
 
   useEffect(() => {
-    fs.collection("Products")
+    /* fs.collection("Products")
       .doc(id)
       .get()
       .then((docu) => setVerNotebooks({ id: docu.id, ...docu.data() }))
-
+      
       .catch((error) => {
-        console.log("Error getting documents: ", error);
+       // console.log("Error getting documents: ", error);
       });
-
+ */
     fs.collection("Products")
       .where("category", "==", "notebooks")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
-          console.log(doc.id);
-          setVerProductos(
+         // console.log(doc.id, " => ", doc.data());
+         // console.log(doc.id);
+         setVerNotebooks(
             querySnapshot.docs.map((documento) => {
               return { ...documento.data(), id: documento.id };
             })
@@ -35,27 +35,28 @@ const Notebooks = () => {
         });
       })
       .catch((error) => {
-        console.log("Error getting documents: ", error);
+       // console.log("Error getting documents: ", error);
       });
   }, []);
 
   return (
-    verProductos.length > 0 && (
+    verNotebooks.length > 0 && (
       <div className="container" id="container-home">
         <div className="row">
           <div className="col-lg-12">
-            {verProductos.map((verProducto) => (
+            {verNotebooks.map((vernotebook) => (
               <div className="lista-prod">
                 <div className="card">
                   <div className="card-body">
-                    <div className="card-title">{verProducto.title}</div>
+                    <div className="card-title">{vernotebook.title}</div>
                     <div className="card-img-top">
-                      <img id="img-lista-prod" src={verProducto.url} alt="product-img" />
+                      <img id="img-lista-prod" src={vernotebook.url} alt="product-img" />
                     </div>
 
-                    <h5 className="card-text">{verProducto.description}</h5>
-                    <div className="card-text">{verProducto.price}</div>
-                    <Link to={`/detalle/${verNotebooks.ID}`}>
+                    <h5 className="card-text">{vernotebook.description}</h5>
+                    <div className="card-text">{vernotebook.price}</div>
+                    <Link to={`/detalle/${vernotebook.id}`}>
+                     
                       <div
                         className="mibutton btn btn-danger btn-md cart-btn"
                         style={{
