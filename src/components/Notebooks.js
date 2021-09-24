@@ -7,26 +7,18 @@ import "./../styles/ListaProductos.css";
 const Notebooks = () => {
   let { id } = useParams();
   const [verNotebooks, setVerNotebooks] = useState([]);
-  const [verProductos, setVerProductos] = useState([]);
+  
 
   useEffect(() => {
-    /* fs.collection("Products")
-      .doc(id)
-      .get()
-      .then((docu) => setVerNotebooks({ id: docu.id, ...docu.data() }))
-      
-      .catch((error) => {
-       // console.log("Error getting documents: ", error);
-      });
- */
+   
     fs.collection("Products")
       .where("category", "==", "notebooks")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-         // console.log(doc.id, " => ", doc.data());
-         // console.log(doc.id);
+          doc.data()
+         //console.log(doc.id, " => ", doc.data());
+         //console.log(doc.id);
          setVerNotebooks(
             querySnapshot.docs.map((documento) => {
               return { ...documento.data(), id: documento.id };
@@ -35,7 +27,7 @@ const Notebooks = () => {
         });
       })
       .catch((error) => {
-       // console.log("Error getting documents: ", error);
+       console.log("Error getting documents: ", error);
       });
   }, []);
 
@@ -44,6 +36,7 @@ const Notebooks = () => {
       <div className="container" id="container-home">
         <div className="row">
           <div className="col-lg-12">
+          <h1 className="text-center pt-5">Notebooks</h1>
             {verNotebooks.map((vernotebook) => (
               <div className="lista-prod">
                 <div className="card">

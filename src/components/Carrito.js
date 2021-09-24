@@ -1,11 +1,29 @@
-import React, { Component } from 'react'
+import DataContext from "../context/DataContext";
+import { useContext } from "react";
+import "./../styles/Carrito.css";
 
-export default class Carrito extends Component {
-    render() {
+const Carrito = () => {
+  const { carrito, count } = useContext(DataContext);
+
+  return (
+    <>
+      {carrito.map((producto) => {
+        {
+          console.log(producto.url);
+        }
         return (
+          <>
+            <h1>Producto {producto.title}</h1>
+            <h1>Precio ${producto.price}</h1>
             <div>
-                <h4>Carrito</h4>
+              <img src={producto.url} />
             </div>
-        )
-    }
-}
+          </>
+        );
+      })}
+      <button className="btn btn-danger">Finalizar Compra</button>
+    </>
+  );
+};
+
+export default Carrito;

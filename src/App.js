@@ -18,10 +18,15 @@ import Detalle from "./components/Detalle";
 import { useState, useEffect } from "react";
 import { auth } from "./Config/Config";
 import Navbar from "./components/Navbar";
+import { useHistory } from "react-router";
+import { DataProvider } from "./context/DataContext";
+
 
 function App() {
-  const [firebaseUser, setFirebaseUser] = useState(false);
+  const [carrito, cambiarCarrito] = useState([]);
 
+  const [firebaseUser, setFirebaseUser] = useState(false);
+  const history = useHistory();
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       console.log(user);
@@ -29,31 +34,33 @@ function App() {
         setFirebaseUser(user);
       } else {
         setFirebaseUser(null);
+
+        history.push("/");
       }
     });
   }, []);
 
   return firebaseUser !== false ? (
-    
+  <DataProvider>
       <Router>
-        <Header />
-        <Navbar firebaseUser = {firebaseUser} />
-        <Switch>
-          <Route exact path="/" component={Inicio} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/home/auriculares/" component={Auriculares} />
-          <Route exact path="/home/celulares/" component={Celulares} />
-          <Route exact path="/home/notebooks/" component={Notebooks} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/products" component={Products} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/home/carrito" component={Carrito} />
-          <Route exact path="/add-products" component={AddProducts} />
-          <Route path="/detalle/:id" component={Detalle} />
-        </Switch>
-      </Router>
-    
-  ) : (
+      <Header />
+      <Navbar firebaseUser={firebaseUser} />
+      <Switch>
+        <Route exact path="/" component={Inicio} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/home/auriculares/" component={Auriculares} />
+        <Route exact path="/home/celulares/" component={Celulares} />
+        <Route exact path="/home/notebooks/" component={Notebooks} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/products" component={Products} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/home/carrito" component={Carrito} />
+        <Route exact path="/add-products" component={AddProducts} />
+        <Route path="/detalle/:id" component={Detalle} />
+      </Switch>
+    </Router>
+  
+  </DataProvider>) : (
     <p> Cargando .... </p>
   );
 }

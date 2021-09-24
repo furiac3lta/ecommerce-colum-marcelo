@@ -34,6 +34,7 @@ const Notebooks = () => {
       <div className="container" id="container-home">
         <div className="row">
           <div className="col-lg-12">
+          <h1 className="text-center pt-5">Auriculares</h1>
             {verAuriculares.map((verAuricular) => (
               <div className="lista-prod">
                 <div className="card">

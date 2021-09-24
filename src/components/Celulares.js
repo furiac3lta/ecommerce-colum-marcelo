@@ -30,10 +30,12 @@ const Notebooks = () => {
 }, []);
 
   return (
+    
     verCelulares.length > 0 && (
       <div className="container" id="container-home">
         <div className="row">
           <div className="col-lg-12">
+          <h1 className="text-center pt-5">Celulares</h1>
             {verCelulares.map((verCelular) => (
               <div className="lista-prod">
                 <div className="card">

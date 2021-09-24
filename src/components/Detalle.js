@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fs } from "../Config/Config";
 import "./../styles/Detalle.css";
-import { NavLink } from "react-router-dom";
+import "./../styles/ContadorProducto.css";
+import ContadorProducto from "./ContadorProducto";
+
 
 const Detalle = () => {
   let { id } = useParams();
@@ -46,14 +48,12 @@ const Detalle = () => {
             <h3>DETALLE</h3>
             <ul>
               <li>{verProducto.detalle}</li>
+              <li>STOCK {verProducto.stock}</li>
             </ul>
           </div>
-          <NavLink exact to ="/home/carrito">
-          <button className="buy--btn">AGREGAR A CARRO</button>
-          </NavLink>
-          <NavLink exact to="/home">
-         <i class="volver fas fa-undo"></i>
-          </NavLink>
+          
+            <ContadorProducto initial={1} producto = {verProducto} />
+        
         </div>
       </section>
     </div>
