@@ -6,9 +6,9 @@ import DataContext from "../context/DataContext";
 
 
 const ContadorProducto = ({ producto, onAdd }) => {
-const { carrito, setCarrito } = useContext(DataContext)
+const { carrito, setCarrito, count, setCount, vaciarCarrito} = useContext(DataContext)
 
-  const [count, setCount] = useState(1);
+
   const [cambiarBoton, setCambiarBoton] = useState(true);
 
   function sumar() {
@@ -17,7 +17,7 @@ const { carrito, setCarrito } = useContext(DataContext)
       console.log(count);
     }
   }
-
+  
   function restar() {
     if (count > 1) {
       setCount(count - 1);

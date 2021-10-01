@@ -52,7 +52,7 @@ const Detalle = () => {
             </ul>
           </div>
           
-            <ContadorProducto initial={1} producto = {verProducto} />
+            <ContadorProducto producto = {verProducto} />
         
         </div>
       </section>

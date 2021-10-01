@@ -1,6 +1,9 @@
 .colors{
   background-color: rgb(215, 233, 247) !important;
 }
+#cantidadCarrito{
+  color: red;
+}
 .header{
   background-repeat: no-repeat;
   background-size: cover; 

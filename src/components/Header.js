@@ -2,12 +2,12 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/Header.css";
 import { NavLink, useHistory } from "react-router-dom";
-import { Icon } from "react-icons-kit";
-import { shoppingCart } from "react-icons-kit/feather/shoppingCart";
 import { auth } from "../Config/Config";
-import Navbar from "./Navbar";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
 const Header = ({ user }) => {
+  const { count, setCount} = useContext(DataContext)
   const history = useHistory();
   const handleLogout = () => {
     auth.signOut().then(() => {
@@ -39,7 +39,10 @@ const Header = ({ user }) => {
                   <i class="fas fa-search"></i>
                 </NavLink>
                 <NavLink exact to="/carrito">
-                  <i class="fas fa-shopping-cart"></i>
+                  <i class="fas fa-shopping-cart">
+                   {/* { {count} === 0 ? <p></p> : {count} } */}
+                   {count}
+                    </i>
                 </NavLink>
                 <NavLink exact to="#">
                   <i
