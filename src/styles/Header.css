@@ -1,5 +1,5 @@
 .colors{
-  background-color: rgb(215, 233, 247) !important;
+  background-color: rgb(255, 239, 120) !important;
 }
 #cantidadCarrito{
   color: red;
@@ -17,7 +17,7 @@
   border: transparent;
   color: rgb(0, 0, 0);
   font-family: 'Lato', sans-serif;
-  padding: 2em;
+  padding: 1em;
   font-size: xx-large;
   
 }
@@ -32,7 +32,7 @@
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-family: 'Lato', sans-serif;
-  padding: 4em;
+  padding: 2em;
   border: transparent;
 }
 i{
@@ -48,7 +48,7 @@ i::after{
   right: 30em;
   color: rgb(0, 0, 0);
   padding: 10px 20px;
-  background: rgb(207, 237, 238);
+  background: rgb(255, 239, 120);
   width: 150px;
   box-shadow: 0 5px 25px;
   border-radius:  5px;

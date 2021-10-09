@@ -20,7 +20,8 @@ import { auth } from "./Config/Config";
 import Navbar from "./components/Navbar";
 import { useHistory } from "react-router";
 import { DataProvider } from "./context/DataContext";
-
+import Footer from "./components/Footer";
+import Orden from "./components/Orden";
 
 function App() {
   const [carrito, cambiarCarrito] = useState([]);
@@ -57,12 +58,14 @@ function App() {
         <Route exact path="/home/carrito" component={Carrito} />
         <Route exact path="/add-products" component={AddProducts} />
         <Route path="/detalle/:id" component={Detalle} />
+        <Route path="/Orden/:id" component={Orden} />
       </Switch>
     </Router>
-  
+    <Footer />
   </DataProvider>) : (
     <p> Cargando .... </p>
   );
+ 
 }
 
 export default App;

@@ -1,34 +1,39 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import { useState } from "react";
 export const DataContext = createContext();
-
-
 export const DataProvider = ({children}) => {
-
-
 const [ carrito, setCarrito]  = useState([]);
-const [count, setCount] = useState(1);
+//const [count, setCount] = useState(0);
 const vaciarCarrito = () =>{
     console.log(carrito)
     setCarrito([])
-    setCount(0)
 }
 
-const icono =() =>{
-    return carrito.reduce((acum, valor) => acum + valor.cantidad, 0)
-}
+
+
+
+const agregarCarrito = (producto,cantidad) => {
+    const copyCarrito = [...carrito]
+    let index = copyCarrito.findIndex((elemento)=> elemento.producto.id === producto.id  )
+    if(index !== -1){
+        let nuevoCount = cantidad + carrito[index].countVendido
+        copyCarrito[index].countVendido = nuevoCount
+    }else{
+        let item = {producto:producto, countVendido:cantidad}
+        copyCarrito.push(item)
+    }
+    setCarrito(copyCarrito);
+  };
     return ( 
         <DataContext.Provider value ={{
             carrito,
-            count,
+            agregarCarrito,
             setCarrito,
-            setCount,
-            vaciarCarrito
+            vaciarCarrito,
             
         }}>
             { children}
         </DataContext.Provider>
      );
 }
- 
 export default DataContext;

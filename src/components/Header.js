@@ -3,11 +3,12 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../styles/Header.css";
 import { NavLink, useHistory } from "react-router-dom";
 import { auth } from "../Config/Config";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import DataContext from "../context/DataContext";
 
 const Header = ({ user }) => {
-  const { count, setCount} = useContext(DataContext)
+  const { carrito} = useContext(DataContext)
+  const [count, setCount] = useState(0)
   const history = useHistory();
   const handleLogout = () => {
     auth.signOut().then(() => {
@@ -25,6 +26,16 @@ const Header = ({ user }) => {
     }, 2000);
   };
 
+  const icono =() =>{
+
+    let cantidadTotal =  carrito.reduce((acum, item) => acum + (item.countVendido), 0)
+    setCount(cantidadTotal)
+
+  }
+useEffect(() => {
+icono()
+}, [carrito])
+
   return (
     <div className="colors">
       <div className="container">
@@ -38,7 +49,7 @@ const Header = ({ user }) => {
                 <NavLink exact to="/search">
                   <i class="fas fa-search"></i>
                 </NavLink>
-                <NavLink exact to="/carrito">
+                <NavLink exact to="/home/carrito">
                   <i class="fas fa-shopping-cart">
                    {/* { {count} === 0 ? <p></p> : {count} } */}
                    {count}

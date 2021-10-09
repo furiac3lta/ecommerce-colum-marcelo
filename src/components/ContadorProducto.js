@@ -4,36 +4,28 @@ import "./../styles/ContadorProducto.css";
 import { useContext } from "react";
 import DataContext from "../context/DataContext";
 
-
-const ContadorProducto = ({ producto, onAdd }) => {
-const { carrito, setCarrito, count, setCount, vaciarCarrito} = useContext(DataContext)
-
+const ContadorProducto = ({ producto }) => {
+  const { agregarCarrito } =
+    useContext(DataContext);
 
   const [cambiarBoton, setCambiarBoton] = useState(true);
-
+  const [count, setCount] = useState(1)
   function sumar() {
     if (count < producto.stock) {
       setCount(count + 1); // count ++ => count = count +1
       console.log(count);
     }
   }
-  
+
   function restar() {
     if (count > 1) {
       setCount(count - 1);
       console.log(count);
     }
   }
-
-  const agregarCarrito = () => {
-     
-  console.log("la cantidad a comprar es: " + count)
-  let copyCarrito = [...carrito, producto] 
-  setCarrito (copyCarrito)
-  console.log(carrito)
- 
-  };
-
+  function agregarC(){
+    agregarCarrito(producto, count)
+}
   
 
   return (
@@ -44,7 +36,7 @@ const { carrito, setCarrito, count, setCount, vaciarCarrito} = useContext(DataCo
             <i class="volver fas fa-undo"></i>
           </NavLink>
           <NavLink exact to="/home/carrito">
-            <button className="buy--btn" onClick={agregarCarrito}>
+            <button className="buy--btn" onClick={agregarC}>
               AGREGAR A CARRO
             </button>
           </NavLink>
@@ -52,7 +44,9 @@ const { carrito, setCarrito, count, setCount, vaciarCarrito} = useContext(DataCo
             +
           </button>
           <label>{count}</label>
-          <button id="idmas" className="btn btn-danger" onClick={restar}>-</button>
+          <button id="idmas" className="btn btn-danger" onClick={restar}>
+            -
+          </button>
           <br />
         </>
       ) : (
