@@ -45,7 +45,7 @@ i::after{
 .menu{
   position: absolute;
   top: 6em;
-  right: 30em;
+  right: 15em;
   color: rgb(0, 0, 0);
   padding: 10px 20px;
   background: rgb(255, 239, 120);
@@ -129,7 +129,7 @@ a{
       top: 13em;
       right: 1em;
       color: rgb(0, 0, 0);
-      padding: 10px 20px;
+      padding: 10px 10px;
       background: rgb(207, 237, 238);
       width: 150px;
       box-shadow: 0 5px 25px;

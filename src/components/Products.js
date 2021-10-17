@@ -4,7 +4,7 @@ import IndividualProduct from './IndividualProduct'
 
 const Products = ({products}) =>{
 
-    //console.log(products.url);
+   
 
     return products.map((individualProduct) =>(
        

@@ -60,12 +60,12 @@ const Login = () => {
       </div>
       {successMsg && (
           <>
-            <div className="container col-lg-4 bg-warning">{successMsg}</div>{" "}
+            <div className="container col-lg-4 bg-success">{successMsg}</div>{" "}
           </>
         )}
         {errorMsg && (
           <>
-            <div className="container col-lg-4 bg-warning">{errorMsg}</div>{" "}
+            <div className="container col-lg-4 bg-error">{errorMsg}</div>{" "}
           </>
         )}
     </div>

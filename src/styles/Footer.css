@@ -1,0 +1,17 @@
+.iconoFooter{
+    color: aliceblue;
+}
+.miAncla:hover{
+    background-color: grey;
+}
+#parrafoFooter{
+    color: white;
+    font-size: 24px;
+    font-family:'Roboto'
+
+    
+}
+.footer{
+    padding-top: 2
+    0px;
+}

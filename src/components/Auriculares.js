@@ -3,13 +3,14 @@ import { fs } from "../Config/Config";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import "./../styles/ListaProductos.css";
+import Boton from "../styled/Boton";
 
-const Notebooks = () => {
+const Auriculares = () => {
   let { id } = useParams();
   const [verAuriculares, setVerAuriculares] = useState([]);
-  
+
   useEffect(() => {
-   fs.collection("Products")
+    fs.collection("Products")
       .where("category", "==", "auriculares")
       .get()
       .then((querySnapshot) => {
@@ -34,27 +35,26 @@ const Notebooks = () => {
       <div className="container" id="container-home">
         <div className="row">
           <div className="col-lg-12">
-          <h1 className="text-center pt-5">Auriculares</h1>
+            <h1 className="text-center pt-5">Auriculares</h1>
             {verAuriculares.map((verAuricular) => (
               <div className="lista-prod">
                 <div className="card">
                   <div className="card-body">
                     <div className="card-title">{verAuricular.title}</div>
                     <div className="card-img-top">
-                      <img  id="img-lista-prod" src={verAuricular.url} alt="product-img" />
+                      <img
+                        id="img-lista-prod"
+                        src={verAuricular.url}
+                        alt="product-img"
+                      />
                     </div>
 
-                    <h5 id="detalle-card-text" className="card-text">{verAuricular.description}</h5>
-                    <div className="card-text">{verAuricular.price}</div>
+                    <h5 id="detalle-card-text" className="card-text">
+                      {verAuricular.description}
+                    </h5>
+                    <div className="card-text">$ {verAuricular.price}</div>
                     <Link to={`/detalle/${verAuricular.id}`}>
-                      <div
-                        className="mibutton btn btn-danger btn-md cart-btn"
-                        style={{
-                          marginLeft: "1px",
-                        }}
-                      >
-                        Detalle
-                      </div>
+                      <Boton>Detalle</Boton>
                     </Link>
                   </div>
                 </div>
@@ -67,4 +67,4 @@ const Notebooks = () => {
   );
 };
 
-export default Notebooks;
+export default Auriculares;

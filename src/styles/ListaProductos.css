@@ -4,6 +4,7 @@
     text-decoration-color: black;
     border-radius: 5px;
     width: 25rem;
+    border-color: #000000 !important;
     
   }
   .card-img-top {
@@ -79,3 +80,64 @@ color:#000000;
 background-color:#FFFFFF;
 border-color: grey;
     }
+
+    /* -----------------------------VERSION MOBILE----------------------------- */
+/*----------- iPhone 6, 6S, 7 and 8 -----------*/
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .card {
+    padding: 1rem;
+    text-decoration: solid;
+    text-decoration-color: black;
+    border-radius: 5px;
+    width: 25rem;
+    border-color: #000000 !important;
+    
+  }
+  .card-img-top {
+    width: 50%;
+    height: 20vh;
+    object-fit: cover;
+  }
+  
+  #detalle-card-text{
+    margin-top: 2.5rem !important;
+}
+
+.card:hover {
+  background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 25px;
+}
+}
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .card {
+    width: 20rem;
+}
+}
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .card {
+    width: 20rem;
+}
+}
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+}
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+ 
+}
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  
+}
+/* ----------------------------- FIN VERSION MOBILE----------------------------- */

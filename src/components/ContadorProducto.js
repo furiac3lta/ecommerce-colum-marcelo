@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./../styles/ContadorProducto.css";
 import { useContext } from "react";
 import DataContext from "../context/DataContext";
+import Boton from "../styled/Boton";
 
 const ContadorProducto = ({ producto }) => {
   const { agregarCarrito } =
@@ -12,7 +13,7 @@ const ContadorProducto = ({ producto }) => {
   const [count, setCount] = useState(1)
   function sumar() {
     if (count < producto.stock) {
-      setCount(count + 1); // count ++ => count = count +1
+      setCount(count + 1);
       console.log(count);
     }
   }
@@ -36,17 +37,18 @@ const ContadorProducto = ({ producto }) => {
             <i class="volver fas fa-undo"></i>
           </NavLink>
           <NavLink exact to="/home/carrito">
-            <button className="buy--btn" onClick={agregarC}>
-              AGREGAR A CARRO
-            </button>
+            <Boton onClick={agregarC}>
+            AGREGAR A CARRO
+            </Boton>
+            
           </NavLink>
-          <button id="idmas" className="btn btn-danger" onClick={sumar}>
+          <Boton id="idmas" onClick={sumar} >
             +
-          </button>
+          </Boton>
           <label>{count}</label>
-          <button id="idmas" className="btn btn-danger" onClick={restar}>
+          <Boton id="idmas" onClick={restar}>
             -
-          </button>
+          </Boton>
           <br />
         </>
       ) : (

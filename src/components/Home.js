@@ -4,7 +4,7 @@ import Products from "./Products";
 import "../styles/Home.css";
 
 const Home = () => {
-  //fs =  firebase.firestore()
+ 
   function GetCurrentUser() {
     const [user, setUser] = useState();
     useEffect(() => {
@@ -23,8 +23,6 @@ const Home = () => {
     }, []);
     return user;
   }
-  const user = GetCurrentUser();
-  //console.log(user)
 
   const [products, setProducts] = useState([]);
   const getProducts = async () => {

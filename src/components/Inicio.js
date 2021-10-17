@@ -41,11 +41,11 @@ const Inicio = () => {
                 <div className="carousel-item active">
                   <img src={imagen4} className="d-block w-30 h-30" alt="..." />
                   <div class="carousel-caption d-none d-md-block">
-                    <h5 className="animate__animated animate__fadeOut">
+                    <h5 className="animate__animated animate__fadeOut h5__carroussel">
                       {" "}
                       Parlantes bluetooh
                     </h5>
-                    <p className="animate__animated animate__fadeOut">
+                    <p className="animate__animated animate__fadeOut h5__carroussel">
                       Variedad de modelos al mejor precio
                     </p>
                   </div>
@@ -53,7 +53,7 @@ const Inicio = () => {
                 <div className="carousel-item">
                   <img src={imagen5} className="d-block w-30" alt="..." />
                   <div class="carousel-caption d-none d-md-block">
-                    <h5 className="animate__animated animate__fadeOut">
+                    <h5 className="animate__animated animate__fadeOut h5__carroussel">
                       Auriculares Pro
                     </h5>
                     <p className="animate__animated animate__fadeOut">

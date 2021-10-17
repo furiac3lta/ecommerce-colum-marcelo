@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { storage, fs } from "../Config/Config";
+
+
 const AddProducts = () => {
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
@@ -83,7 +85,7 @@ const AddProducts = () => {
       {successMsg && (
         <>
           <br></br>
-          <div className="p-3 mb-5 bg-success text-white">{successMsg}</div>
+          <div className="container p-3 mb-5 bg-success text-white">{successMsg}</div>
         </>
       )}
 
