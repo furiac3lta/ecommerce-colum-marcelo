@@ -34,6 +34,7 @@ You will also see any lint errors in the console.
 - dirigirse a la carpeta del mismo
 - ejecutar npm i
 - ejecutar npm start
+- Para agregar productos ir a: localhost:3000/add-products
 
 ### Para hacer
 
