@@ -18,12 +18,9 @@ const Header = ({ user }) => {
 
   const toggleMenu = () => {
     let ancla = document.querySelector(".menu");
-    let miAncla = ancla.classList.toggle("active");
-    setTimeout(() => {
-      if (miAncla) {
-        ancla.classList.remove("active");
-      }
-    }, 2000);
+    
+    ancla.classList.contains("active") ? ancla.classList.remove("active") :  ancla.classList.toggle("active")
+  
   };
 
   const icono =() =>{
