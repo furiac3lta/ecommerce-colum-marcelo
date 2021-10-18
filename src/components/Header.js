@@ -9,6 +9,7 @@ import DataContext from "../context/DataContext";
 const Header = ({ user }) => {
   const { carrito} = useContext(DataContext)
   const [count, setCount] = useState(0)
+  const [display, setDisplay]=useState("none")
   const history = useHistory();
   const handleLogout = () => {
     auth.signOut().then(() => {
@@ -17,9 +18,10 @@ const Header = ({ user }) => {
   };
 
   const toggleMenu = () => {
-    let ancla = document.querySelector(".menu");
+    //let ancla = document.querySelector(".menu");
     
-    ancla.classList.contains("active") ? ancla.classList.remove("active") :  ancla.classList.toggle("active")
+   // ancla.classList.contains("block") ? ancla.classList.toggle("hidden") :  ancla.classList.toggle("block")
+   display ==="none" ? setDisplay("block") : setDisplay("none")
   
   };
 
@@ -60,7 +62,7 @@ icono()
                       paddingTop: "10px",
                     }}
                   ></i>
-                  <ul className="menu">
+                  <ul className="menu" style={{display: display}}>
                     <NavLink exact to="/login">
                       <li>Login</li>
                     </NavLink>
