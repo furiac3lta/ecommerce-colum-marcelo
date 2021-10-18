@@ -18,12 +18,12 @@ styled component
 firebase
 
 ### En el directorio se encontrara:
-component --> con los componentes en js
-Config    --> con la conexion a la base de datos
-Context   --> con el datacontext
-imagen    --> imagenes del carousel
-styled    --> con los componentes que se usaron para estilos
-styles    --> archivos css para darle estilos a la pagina
+- component --> con los componentes en js
+- Config    --> con la conexion a la base de datos
+- Context   --> con el datacontext
+- imagen    --> imagenes del carousel
+- styled    --> con los componentes que se usaron para estilos
+- styles    --> archivos css para darle estilos a la pagina
 
 
 The page will reload if you make edits.\
