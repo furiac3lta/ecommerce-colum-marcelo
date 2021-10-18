@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import "./../styles/ListaProductos.css";
 import Boton from "../styled/Boton";
+import styled from "styled-components";
 const Notebooks = () => {
   let { id } = useParams();
   const [verNotebooks, setVerNotebooks] = useState([]);
@@ -48,7 +49,7 @@ const Notebooks = () => {
                       />
                     </div>
 
-                    <h5 className="card-text">{vernotebook.description}</h5>
+                    <CardText>{vernotebook.description}</CardText>
                     <div className="card-text">$ {vernotebook.price}</div>
                     <Link to={`/detalle/${vernotebook.id}`}>
                       <Boton>Detalle</Boton>
@@ -64,4 +65,7 @@ const Notebooks = () => {
   );
 };
 
+const CardText = styled.h5`
+  margin-top: 70px;
+`
 export default Notebooks;

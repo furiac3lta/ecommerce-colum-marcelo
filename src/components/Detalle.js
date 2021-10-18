@@ -51,8 +51,10 @@ const Detalle = () => {
               <li>STOCK {verProducto.stock}</li>
             </ul>
           </div>
-          
-            <ContadorProducto producto = {verProducto} />
+          <div className="container">
+
+          <ContadorProducto producto = {verProducto} />
+          </div>
         
         </div>
       </section>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./../styles/ListaProductos.css";
 import "animate.css";
 import Boton from "../styled/Boton";
+import styled from "styled-components";
 const IndividualProduct = ({ individualProduct, addToCart }) => {
   console.log(individualProduct);
   const handleAddToCart = () => {
@@ -18,8 +19,8 @@ const IndividualProduct = ({ individualProduct, addToCart }) => {
             alt="product-img"
           />
         </div>
-        <div className="card-title">{individualProduct.title}</div>
-        <h4 className="card-text">{individualProduct.description}</h4>
+        {/* <div className="card-title">{individualProduct.title}</div> */}
+        <CardText>{individualProduct.description}</CardText>
         <div className="card-text">$ {individualProduct.price}</div>
         <Link to={`/detalle/${individualProduct.ID}`}>
           <Boton>Detalle</Boton>
@@ -29,5 +30,7 @@ const IndividualProduct = ({ individualProduct, addToCart }) => {
   );
 };
 //9BnHx90etciK2iUtcIy9
-
+const CardText = styled.h5`
+  margin-top: 100px;
+`
 export default IndividualProduct;

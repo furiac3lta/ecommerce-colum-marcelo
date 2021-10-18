@@ -64,10 +64,10 @@ const Inicio = () => {
                 <div className="carousel-item">
                   <img src={imagen6} className="d-block w-30 mouse" alt="..." />
                   <div class="carousel-caption d-none d-md-block">
-                    <h5 className="animate__animated animate__fadeOut">
+                    <h5 className="animate__animated animate__fadeOut h5__carroussel">
                       Iphone en stock
                     </h5>
-                    <p className="animate__animated animate__fadeOut">
+                    <p className="animate__animated animate__fadeOut h5__carroussel" >
                       Llegaron los iphone 12 a dolar oficial!
                     </p>
                   </div>

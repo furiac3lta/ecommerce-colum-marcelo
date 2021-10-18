@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import "./../styles/ListaProductos.css";
 import Boton from "../styled/Boton";
+import styled from "styled-components";
 
 const Auriculares = () => {
   let { id } = useParams();
@@ -49,9 +50,9 @@ const Auriculares = () => {
                       />
                     </div>
 
-                    <h5 id="detalle-card-text" className="card-text">
+                    <CardText>
                       {verAuricular.description}
-                    </h5>
+                    </CardText>
                     <div className="card-text">$ {verAuricular.price}</div>
                     <Link to={`/detalle/${verAuricular.id}`}>
                       <Boton>Detalle</Boton>
@@ -66,5 +67,7 @@ const Auriculares = () => {
     )
   );
 };
-
+const CardText = styled.h5`
+  margin-top: 100px;
+`
 export default Auriculares;

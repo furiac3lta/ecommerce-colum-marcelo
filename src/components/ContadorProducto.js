@@ -34,7 +34,7 @@ const ContadorProducto = ({ producto }) => {
       {cambiarBoton ? (
         <>
           <NavLink exact to="/home">
-            <i class="volver fas fa-undo"></i>
+            <i className="volver fas fa-undo"></i>
           </NavLink>
           <NavLink exact to="/home/carrito">
             <Boton onClick={agregarC}>
